@@ -21,5 +21,5 @@ rm_test = np.array(rm[int(-0.2 * n):])
 
 
 #print (crim_training)
-print (crim_test)
+#print (crim_test)
 

@@ -1,5 +1,5 @@
 # Simple-Linear-Regression-Assignment 2
-Implementing a simple Linear Regression Model in python On Boston Dataset
+# Implementing simple Linear Regression Model using python On Boston Dataset
 
 finding the coffecients in = mx + c using least square error technique
 

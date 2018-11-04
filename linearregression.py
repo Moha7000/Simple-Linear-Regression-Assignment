@@ -1,4 +1,4 @@
-import matplotlib 
+import matplotlib.pyplot as mtp
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -8,7 +8,7 @@ import statsmodels.api as sm
 data = pd.read_csv('boston.csv')
 
 x = np.array(data['crim'])
-y = np.array(data['age'])
+y = np.array(data['nox'])
 
 n = np.size(x)
 
@@ -33,7 +33,25 @@ def find_coef(x, y):
 
 m,c = find_coef(x_training, y_training)
 
-regression_line = [(m * i) + c for i in x_training]
+reg_line = [(m * i) + c for i in x_training]
 
 y_predict = np.array([(m * i) + c for i in x_test])
 	
+#error average
+mean_error = np.mean(sum((y_predict - y_test) ** 2))
+
+print(mean_error)
+
+#plotting results
+#drawing the training set and the model
+mtp.plot(x, y, 'g.', label = 'data') # draw data as points
+mtp.plot(x_training, reg_line, 'r-', label = 'Linear reg') #draw our line
+mtp.plot(x_test, y_test, 'bx' , label='testing 20%')
+
+#drwing features
+mtp.title('Simple Linear reg')
+mtp.xlabel('parameter 1')
+mtp.ylabel('parameter 2')
+mtp.legend(loc = 'best')
+mtp.grid(True)
+mtp.show()

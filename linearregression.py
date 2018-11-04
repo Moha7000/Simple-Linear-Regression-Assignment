@@ -24,7 +24,7 @@ y_test = np.array(y[int(-0.2 * n):])
 #print (x_test)
 
 
-#finding the coffecients  y = mx + c    using mean square error technique
+#finding the coffecients  y = mx + c    using least square error technique
 def find_coef(x, y):
     n = np.size(x)
     m = (np.mean(x) * np.mean(y) - np.mean(x * y)) / (np.mean(x) * np.mean(x)  - np.mean(x ** 2))
